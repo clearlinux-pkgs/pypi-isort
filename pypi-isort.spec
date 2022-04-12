@@ -4,7 +4,7 @@
 #
 Name     : pypi-isort
 Version  : 5.10.1
-Release  : 102
+Release  : 103
 URL      : https://files.pythonhosted.org/packages/ab/e9/964cb0b2eedd80c92f5172f1f8ae0443781a9d461c1372a3ce5762489593/isort-5.10.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/ab/e9/964cb0b2eedd80c92f5172f1f8ae0443781a9d461c1372a3ce5762489593/isort-5.10.1.tar.gz
 Summary  : A Python utility / library to sort Python imports.
@@ -15,9 +15,6 @@ Requires: pypi-isort-license = %{version}-%{release}
 Requires: pypi-isort-python = %{version}-%{release}
 Requires: pypi-isort-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-Provides: isort
-Provides: isort-python
-Provides: isort-python3
 BuildRequires : pypi(poetry_core)
 
 %description
@@ -68,7 +65,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1641446779
+export SOURCE_DATE_EPOCH=1649766863
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
