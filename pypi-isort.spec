@@ -4,7 +4,7 @@
 #
 Name     : pypi-isort
 Version  : 5.11.0
-Release  : 112
+Release  : 113
 URL      : https://files.pythonhosted.org/packages/ee/00/c5929aab9d7459d2b32dbbd2a013f591503f3f0a5e346226aa1ceb7f7989/isort-5.11.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/ee/00/c5929aab9d7459d2b32dbbd2a013f591503f3f0a5e346226aa1ceb7f7989/isort-5.11.0.tar.gz
 Summary  : A Python utility / library to sort Python imports.
@@ -68,7 +68,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1670882707
+export SOURCE_DATE_EPOCH=1670890406
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -93,8 +93,8 @@ popd
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-isort
-cp %{_builddir}/isort-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-isort/00afc6bf25b2c1776f00c130bbf4397210ce7766 || :
-cp %{_builddir}/isort-%{version}/isort/_vendored/tomli/LICENSE %{buildroot}/usr/share/package-licenses/pypi-isort/9da6ca26337a886fb3e8d30efd4aeda623dc9ade || :
+cp %{_builddir}/isort-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-isort/00afc6bf25b2c1776f00c130bbf4397210ce7766
+cp %{_builddir}/isort-%{version}/isort/_vendored/tomli/LICENSE %{buildroot}/usr/share/package-licenses/pypi-isort/9da6ca26337a886fb3e8d30efd4aeda623dc9ade
 pip install --root=%{buildroot} --no-deps --ignore-installed dist/*.whl
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -107,6 +107,8 @@ export FCFLAGS="$FCFLAGS -m64 -march=x86-64-v3 "
 export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3 "
 pip install --root=%{buildroot}-v3 --no-deps --ignore-installed dist/*.whl
 popd
+## Remove excluded files
+rm -f %{buildroot}*/usr/lib/python3.*/site-packages/LICENSE
 ## install_append content
 rm -rf %{buildroot}/usr/lib/python3*/site-packages/tests
 ## install_append end
