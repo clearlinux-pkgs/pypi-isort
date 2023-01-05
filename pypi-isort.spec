@@ -4,7 +4,7 @@
 #
 Name     : pypi-isort
 Version  : 5.11.4
-Release  : 118
+Release  : 119
 URL      : https://files.pythonhosted.org/packages/76/46/004e2dd6c312e8bb7cb40a6c01b770956e0ef137857e82d47bd9c829356b/isort-5.11.4.tar.gz
 Source0  : https://files.pythonhosted.org/packages/76/46/004e2dd6c312e8bb7cb40a6c01b770956e0ef137857e82d47bd9c829356b/isort-5.11.4.tar.gz
 Summary  : A Python utility / library to sort Python imports.
